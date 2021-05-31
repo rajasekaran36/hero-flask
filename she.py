@@ -5,3 +5,4 @@ def gps():
     wb = gc.open("datapoint")
     ws = wb.get_worksheet(0)
     return ws.get_all_values()
+

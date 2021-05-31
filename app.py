@@ -1,4 +1,5 @@
 from flask import Flask,jsonify,request
+from flask.templating import render_template
 from main import *;
 from she import *;
 app = Flask(__name__)
@@ -21,5 +22,17 @@ def getdata():
     print(p_data)
     return jsonify(p_data)
 
+@app.route("/temp")
+def temp():
+    list = [2,3,4,1]
+    return render_template("index.html",students=list)
+
+@app.route("/sav",methods=["POST"])
+def handle():
+    f = request.files['file']
+    f.save(f.filename)
+    with open(f.filename,'r') as src:
+        return jsonify(process(src.read()))
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

@@ -1,24 +1,27 @@
-from typing import Sequence
-
-
 class Student:
-
+    __roll_no = None
     __name = None
-    __date = None
-    __present = False
-    __email = None
-    __comments = None
-    __arrival_time =None
-    __last_teen = None
-    __no_of_checks = None
-    __joined = None
-    __details = None
+    __gmeet_names = []
 
-    def __init__(self):
-        pass
+    def __init__(self,roll_no,name,gmeet_names):
+        self.__roll_no = roll_no
+        self.__name = name
+        self.__gmeet_names = gmeet_names
 
-    def get_email(self):
-        return self.__email
+    def get_roll_no(self):
+        return self.__roll_no
+    
+    def get_name(self):
+        return self.__name
 
-    def set_email(self,email):
-        self.__email = email
+    def get_gmeet_names(self):
+        return self.__gmeet_names
+
+    def set_roll_no(self,roll_no):
+        self.__roll_no = roll_no
+    
+    def set_name(self,name):
+        self.__name = name
+    
+    def set_gmeet_names(self,gmeet_names):
+        self.__gmeet_names = gmeet_names
